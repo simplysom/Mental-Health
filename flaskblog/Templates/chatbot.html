@@ -1,0 +1,794 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='smruti/css/style.css') }}">
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script src="{{ url_for('static', filename='smruti/js/custom.js')}}"></script>
+    <title>Mental Health Bot</title>
+</head>
+<body style="background-image: url(background.jpg);">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+ 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<form id="myForm" method="post">
+<div class="ChatWindow">
+
+<div class="ChatItem ">
+    <div class="ChatItem-meta">
+      <div class ="ChatItem-avatar ">
+          <img class="ChatItem-avatarImage" src="https://image.ibb.co/eTiXWa/avatarrobot.png">
+      </div>
+  </div> 
+  <div class="ChatItem-chatContent">
+    <div class="ChatItem-chatText">
+      <div class="text">
+      Hi! This is baymax. Your personal Mental Healthcare Assistant. Please answer the following question so that I can gauge your mental health status.
+    </div>
+    </div>
+  </div>
+</div>
+
+<div id="1">
+<div class="ChatItem ">
+    <div class="ChatItem-meta">
+      <div class ="ChatItem-avatar ">
+          <img class="ChatItem-avatarImage" src="https://image.ibb.co/eTiXWa/avatarrobot.png">
+      </div>
+  </div> 
+
+ 
+  <div class="ChatItem-chatContent">
+    <div class="ChatItem-chatText">
+      <div class="text">
+        Are you very anxious, worried or scared about a lot of things in your life?<br>
+        <input type="radio"  name="q1" value="1" onclick="nextq(this);">
+        <label >Never</label><br>
+        <input type="radio" name="q1" value="2" onclick="nextq(this);">
+        <label >Sometimes</label><br>
+        <input type="radio" name="q1" value="3" onclick="nextq(this);">
+        <label >Constantly</label><br>  
+      </div>
+    </div>
+    </div>
+  </div>
+</div>
+
+<div class="ChatItem-chatContent" style="margin-left: 150px; margin-bottom: 30px;">
+  
+    <div id="b1" class="ChatItem-chatResponse" style="display:none; ">
+      <div class="text">
+        <div id="r1">
+        </div>
+      </div>
+    </div>
+</div>
+
+<div id="2" style="display:none;">
+<div class="ChatItem ">
+    <div class="ChatItem-meta">
+      <div class ="ChatItem-avatar ">
+          <img class="ChatItem-avatarImage" src="https://image.ibb.co/eTiXWa/avatarrobot.png">
+      </div>
+  </div> 
+
+ 
+  <div class="ChatItem-chatContent">
+    <div class="ChatItem-chatText">
+      <div class="text">
+        Do you feel that your worry is out of your control?<br>
+        <input type="radio" name="q2" value="1" onclick="nextq(this);">
+        <label for="q2" >Never</label><br>
+        <input type="radio" name="q2" value="2" onclick="nextq(this);">
+        <label for="q2">Sometimes</label><br>
+        <input type="radio" name="q2" value="3" onclick="nextq(this);">
+        <label >Constantly</label><br> 
+      </div>
+    </div>
+    </div>
+  </div>
+</div>
+
+<div class="ChatItem-chatContent" style="margin-left: 150px; margin-bottom: 30px;">
+  
+    <div id="b2" class="ChatItem-chatResponse" style="display:none; ">
+      <div class="text">
+        <div id="r2">
+        </div>
+      </div>
+    </div>
+</div>
+
+<div id="3" style="display:none;">
+<div class="ChatItem ">
+    <div class="ChatItem-meta">
+      <div class ="ChatItem-avatar ">
+          <img class="ChatItem-avatarImage" src="https://image.ibb.co/eTiXWa/avatarrobot.png">
+      </div>
+  </div> 
+
+ 
+  <div class="ChatItem-chatContent">
+    <div class="ChatItem-chatText">
+      <div class="text">
+       Do you feel restless, agitated, frantic, or tense?<br>
+        <input type="radio" name="q3" value="1" onclick="nextq(this);">
+        <label for="q3" >Never</label><br>
+        <input type="radio" name="q3" value="2" onclick="nextq(this);">
+        <label for="q3">Sometimes</label><br>
+        <input type="radio" name="q3" value="3" onclick="nextq(this);">
+        <label for="q3">Constantly</label><br> 
+      </div>
+    </div>
+    </div>
+  </div>
+</div>
+
+<div class="ChatItem-chatContent" style="margin-left: 150px; margin-bottom: 30px;">
+  
+    <div id="b3" class="ChatItem-chatResponse" style="display:none; ">
+      <div class="text">
+        <div id="r3">
+        </div>
+      </div>
+    </div>
+</div>
+
+
+
+<div id="4" style="display:none;">
+<div class="ChatItem ">
+    <div class="ChatItem-meta">
+      <div class ="ChatItem-avatar ">
+          <img class="ChatItem-avatarImage" src="https://image.ibb.co/eTiXWa/avatarrobot.png">
+      </div>
+  </div> 
+
+ 
+  <div class="ChatItem-chatContent">
+    <div class="ChatItem-chatText">
+      <div class="text">
+       Do you have trouble sleeping, staying asleep or don't feel well-rested after you wake up?<br>
+        <input type="radio" name="q4" value="1" onclick="nextq(this);">
+        <label for="q4" >Never</label><br>
+        <input type="radio" name="q4" value="2" onclick="nextq(this);">
+        <label for="q4">Sometimes</label><br>
+        <input type="radio" name="q4" value="3" onclick="nextq(this);">
+        <label for="q4">Constantly</label><br> 
+      </div>
+    </div>
+    </div>
+  </div>
+</div>
+
+<div class="ChatItem-chatContent" style="margin-left: 150px; margin-bottom: 30px;">
+  
+    <div id="b4" class="ChatItem-chatResponse" style="display:none; ">
+      <div class="text">
+        <div id="r4">
+        </div>
+      </div>
+    </div>
+</div>
+
+<div id="5" style="display:none;">
+<div class="ChatItem ">
+    <div class="ChatItem-meta">
+      <div class ="ChatItem-avatar ">
+          <img class="ChatItem-avatarImage" src="https://image.ibb.co/eTiXWa/avatarrobot.png">
+      </div>
+  </div> 
+
+ 
+  <div class="ChatItem-chatContent">
+    <div class="ChatItem-chatText">
+      <div class="text">
+       Does your heart skip beat, pound, or heart rate increases?<br>
+        <input type="radio" name="q5" value="1" onclick="nextq(this);">
+        <label for="q5" >Never</label><br>
+        <input type="radio" name="q5" value="2" onclick="nextq(this);">
+        <label for="q5">Sometimes</label><br>
+        <input type="radio" name="q5" value="3" onclick="nextq(this);">
+        <label for="q5" >Constantly</label><br> 
+      </div>
+    </div>
+    </div>
+  </div>
+</div>
+
+<div class="ChatItem-chatContent" style="margin-left: 150px; margin-bottom: 30px;">
+  
+    <div id="b5" class="ChatItem-chatResponse" style="display:none; ">
+      <div class="text">
+        <div id="r5">
+        </div>
+      </div>
+    </div>
+</div>
+
+<div id="6" style="display:none;">
+<div class="ChatItem ">
+    <div class="ChatItem-meta">
+      <div class ="ChatItem-avatar ">
+          <img class="ChatItem-avatarImage" src="https://image.ibb.co/eTiXWa/avatarrobot.png">
+      </div>
+  </div> 
+
+ 
+  <div class="ChatItem-chatContent">
+    <div class="ChatItem-chatText">
+      <div class="text">
+       Do you sweating profusely?<br>
+        <input type="radio" name="q6" value="1" onclick="nextq(this);">
+        <label for="q6" >Never</label><br>
+        <input type="radio" name="q6" value="2" onclick="nextq(this);">
+        <label for="q6">Sometimes</label><br>
+        <input type="radio" name="q6" value="3" onclick="nextq(this);">
+        <label for="q6" >Constantly</label><br> 
+      </div>
+    </div>
+    </div>
+  </div>
+</div>
+
+<div class="ChatItem-chatContent" style="margin-left: 150px; margin-bottom: 30px;">
+  
+    <div id="b6" class="ChatItem-chatResponse" style="display:none; ">
+      <div class="text">
+        <div id="r6">
+        </div>
+      </div>
+    </div>
+</div>
+
+<div id="7" style="display:none;">
+<div class="ChatItem ">
+    <div class="ChatItem-meta">
+      <div class ="ChatItem-avatar ">
+          <img class="ChatItem-avatarImage" src="https://image.ibb.co/eTiXWa/avatarrobot.png">
+      </div>
+  </div> 
+
+ 
+  <div class="ChatItem-chatContent">
+    <div class="ChatItem-chatText">
+      <div class="text">
+       Do your hands, legs or entire body shake, tremble, or feel tingly?<br>
+        <input type="radio" name="q7" value="1" onclick="nextq(this);">
+        <label for="q7" >Never</label><br>
+        <input type="radio" name="q7" value="2" onclick="nextq(this);">
+        <label for="q7">Sometimes</label><br>
+        <input type="radio" name="q7" value="3" onclick="nextq(this);">
+        <label for="q7" >Constantly</label><br> 
+      </div>
+    </div>
+    </div>
+  </div>
+</div>
+
+<div class="ChatItem-chatContent" style="margin-left: 150px; margin-bottom: 30px;">
+  
+    <div id="b7" class="ChatItem-chatResponse" style="display:none; ">
+      <div class="text">
+        <div id="r7">
+        </div>
+      </div>
+    </div>
+</div>
+
+<div id="8" style="display:none;">
+<div class="ChatItem ">
+    <div class="ChatItem-meta">
+      <div class ="ChatItem-avatar ">
+          <img class="ChatItem-avatarImage" src="https://image.ibb.co/eTiXWa/avatarrobot.png">
+      </div>
+  </div> 
+
+ 
+  <div class="ChatItem-chatContent">
+    <div class="ChatItem-chatText">
+      <div class="text">
+       Do you have difficulty breathing or swallowing?<br>
+        <input type="radio" name="q8" value="1" onclick="nextq(this);">
+        <label for="q8" >Never</label><br>
+        <input type="radio" name="q8" value="2" onclick="nextq(this);">
+        <label for="q8">Sometimes</label><br>
+        <input type="radio" name="q8" value="3" onclick="nextq(this);">
+        <label for="q8" >Constantly</label><br> 
+      </div>
+    </div>
+    </div>
+  </div>
+</div>
+
+<div class="ChatItem-chatContent" style="margin-left: 150px; margin-bottom: 30px;">
+  
+    <div id="b8" class="ChatItem-chatResponse" style="display:none; ">
+      <div class="text">
+        <div id="r8">
+        </div>
+      </div>
+    </div>
+</div>
+
+<div id="9" style="display:none;">
+<div class="ChatItem ">
+    <div class="ChatItem-meta">
+      <div class ="ChatItem-avatar ">
+          <img class="ChatItem-avatarImage" src="https://image.ibb.co/eTiXWa/avatarrobot.png">
+      </div>
+  </div> 
+
+ 
+  <div class="ChatItem-chatContent">
+    <div class="ChatItem-chatText">
+      <div class="text">
+       Do you have  pain in your chest, almost like having a heart attack?<br>
+        <input type="radio" name="q9" value="1" onclick="nextq(this);">
+        <label for="q9" >Never</label><br>
+        <input type="radio" name="q9" value="2" onclick="nextq(this);">
+        <label for="q9">Sometimes</label><br>
+        <input type="radio" name="q9" value="3" onclick="nextq(this);">
+        <label for="q9" >Constantly</label><br> 
+      </div>
+    </div>
+    </div>
+  </div>
+</div>
+
+<div class="ChatItem-chatContent" style="margin-left: 150px; margin-bottom: 30px;">
+  
+    <div id="b9" class="ChatItem-chatResponse" style="display:none; ">
+      <div class="text">
+        <div id="r9">
+        </div>
+      </div>
+    </div>
+</div>
+
+<div id="10" style="display:none;">
+<div class="ChatItem ">
+    <div class="ChatItem-meta">
+      <div class ="ChatItem-avatar ">
+          <img class="ChatItem-avatarImage" src="https://image.ibb.co/eTiXWa/avatarrobot.png">
+      </div>
+  </div> 
+
+ 
+  <div class="ChatItem-chatContent">
+    <div class="ChatItem-chatText">
+      <div class="text">
+       Do you feel sick to your stomach, like you were going to throw up, or had diarrhea?<br>
+        <input type="radio" name="q10" value="1" onclick="nextq(this);">
+        <label for="q10" >Never</label><br>
+        <input type="radio" name="q10" value="2" onclick="nextq(this);">
+        <label for="q10">Sometimes</label><br>
+        <input type="radio" name="q10" value="3" onclick="nextq(this);">
+        <label for="q10" >Constantly</label><br> 
+      </div>
+    </div>
+    </div>
+  </div>
+</div>
+
+<div class="ChatItem-chatContent" style="margin-left: 150px; margin-bottom: 30px;">
+  
+    <div id="b10" class="ChatItem-chatResponse" style="display:none; ">
+      <div class="text">
+        <div id="r10">
+        </div>
+      </div>
+    </div>
+</div>
+
+<div id="11" style="display:none;">
+<div class="ChatItem ">
+    <div class="ChatItem-meta">
+      <div class ="ChatItem-avatar ">
+          <img class="ChatItem-avatarImage" src="https://image.ibb.co/eTiXWa/avatarrobot.png">
+      </div>
+  </div> 
+
+ 
+  <div class="ChatItem-chatContent">
+    <div class="ChatItem-chatText">
+      <div class="text">
+       Do you feel dizzy, like your head was spinning, or feel like you were going to faint?<br>
+        <input type="radio" name="q11" value="1" onclick="nextq(this);">
+        <label for="q11" >Never</label><br>
+        <input type="radio" name="q11" value="2" onclick="nextq(this);">
+        <label for="q11">Sometimes</label><br>
+        <input type="radio" name="q11" value="3" onclick="nextq(this);">
+        <label for="q11" >Constantly</label><br> 
+      </div>
+    </div>
+    </div>
+  </div>
+</div>
+
+<div class="ChatItem-chatContent" style="margin-left: 150px; margin-bottom: 30px;">
+  
+    <div id="b11" class="ChatItem-chatResponse" style="display:none; ">
+      <div class="text">
+        <div id="r11">
+        </div>
+      </div>
+    </div>
+</div>
+
+<div id="12" style="display:none;">
+<div class="ChatItem ">
+    <div class="ChatItem-meta">
+      <div class ="ChatItem-avatar ">
+          <img class="ChatItem-avatarImage" src="https://image.ibb.co/eTiXWa/avatarrobot.png">
+      </div>
+  </div> 
+
+ 
+  <div class="ChatItem-chatContent">
+    <div class="ChatItem-chatText">
+      <div class="text">
+       Do you have cold or hot flashes?<br>
+        <input type="radio" name="q12" value="1" onclick="nextq(this);">
+        <label for="q12" >Never</label><br>
+        <input type="radio" name="q12" value="2" onclick="nextq(this);">
+        <label for="q12">Sometimes</label><br>
+        <input type="radio" name="q12" value="3" onclick="nextq(this);">
+        <label for="q12" >Constantly</label><br> 
+      </div>
+    </div>
+    </div>
+  </div>
+</div>
+
+<div class="ChatItem-chatContent" style="margin-left: 150px; margin-bottom: 30px;">
+  
+    <div id="b12" class="ChatItem-chatResponse" style="display:none; ">
+      <div class="text">
+        <div id="r12">
+        </div>
+      </div>
+    </div>
+</div>
+
+
+<div id="13" style="display:none;">
+<div class="ChatItem ">
+    <div class="ChatItem-meta">
+      <div class ="ChatItem-avatar ">
+          <img class="ChatItem-avatarImage" src="https://image.ibb.co/eTiXWa/avatarrobot.png">
+      </div>
+  </div> 
+
+ 
+  <div class="ChatItem-chatContent">
+    <div class="ChatItem-chatText">
+      <div class="text">
+       Were you scared that you would lose control, go crazy, or die?<br>
+        <input type="radio" name="q13" value="1" onclick="nextq(this);">
+        <label for="q13" >Never</label><br>
+        <input type="radio" name="q13" value="2" onclick="nextq(this);">
+        <label for="q13">Sometimes</label><br>
+        <input type="radio" name="q13" value="3" onclick="nextq(this);">
+        <label for="q13" >Constantly</label><br> 
+      </div>
+    </div>
+    </div>
+  </div>
+</div>
+
+<div class="ChatItem-chatContent" style="margin-left: 150px; margin-bottom: 30px;">
+  
+    <div id="b13" class="ChatItem-chatResponse" style="display:none; ">
+      <div class="text">
+        <div id="r13">
+        </div>
+      </div>
+    </div>
+</div>
+
+<div id="14" style="display:none;">
+<div class="ChatItem ">
+    <div class="ChatItem-meta">
+      <div class ="ChatItem-avatar ">
+          <img class="ChatItem-avatarImage" src="https://image.ibb.co/eTiXWa/avatarrobot.png">
+      </div>
+  </div> 
+
+ 
+  <div class="ChatItem-chatContent">
+    <div class="ChatItem-chatText">
+      <div class="text">
+        How frequently do you experience panic attacks ?<br>
+        <input type="radio" name="q14" value="1" onclick="nextq(this);">
+        <label for="q14" >Never</label><br>
+        <input type="radio" name="q14" value="2" onclick="nextq(this);">
+        <label for="q14">Sometimes</label><br>
+        <input type="radio" name="q14" value="3" onclick="nextq(this);">
+        <label for="q14" >Constantly</label><br> 
+      </div>
+    </div>
+    </div>
+  </div>
+</div>
+
+<div class="ChatItem-chatContent" style="margin-left: 150px; margin-bottom: 30px;">
+  
+    <div id="b14" class="ChatItem-chatResponse" style="display:none; ">
+      <div class="text">
+        <div id="r14">
+        </div>
+      </div>
+    </div>
+</div>
+
+<div id="15" style="display:none;">
+<div class="ChatItem ">
+    <div class="ChatItem-meta">
+      <div class ="ChatItem-avatar ">
+          <img class="ChatItem-avatarImage" src="https://image.ibb.co/eTiXWa/avatarrobot.png">
+      </div>
+  </div> 
+
+ 
+  <div class="ChatItem-chatContent">
+    <div class="ChatItem-chatText">
+      <div class="text">
+       Did you purposely avoid situations or activities in which you might experience a panic attack?<br>
+        <input type="radio" name="q15" value="1" onclick="nextq(this);">
+        <label for="q15" >Never</label><br>
+        <input type="radio" name="q15" value="2" onclick="nextq(this);">
+        <label for="q15">Sometimes</label><br>
+        <input type="radio" name="q15" value="3" onclick="nextq(this);">
+        <label for="q15" >Constantly</label><br> 
+      </div>
+    </div>
+    </div>
+  </div>
+</div>
+
+<div class="ChatItem-chatContent" style="margin-left: 150px; margin-bottom: 30px;">
+  
+    <div id="b15" class="ChatItem-chatResponse" style="display:none; ">
+      <div class="text">
+        <div id="r15">
+        </div>
+      </div>
+    </div>
+</div>
+
+<div id="16" style="display:none;">
+<div class="ChatItem ">
+    <div class="ChatItem-meta">
+      <div class ="ChatItem-avatar ">
+          <img class="ChatItem-avatarImage" src="https://image.ibb.co/eTiXWa/avatarrobot.png">
+      </div>
+  </div> 
+
+ 
+  <div class="ChatItem-chatContent">
+    <div class="ChatItem-chatText">
+      <div class="text">
+       Do you frequently feel sad, like you couldn't go on?<br>
+        <input type="radio" name="q16" value="1" onclick="nextq(this);">
+        <label for="q16" >Never</label><br>
+        <input type="radio" name="q16" value="2" onclick="nextq(this);">
+        <label for="q16">Sometimes</label><br>
+        <input type="radio" name="q16" value="3" onclick="nextq(this);">
+        <label for="q16" >Constantly</label><br> 
+      </div>
+    </div>
+    </div>
+  </div>
+</div>
+
+<div class="ChatItem-chatContent" style="margin-left: 150px; margin-bottom: 30px;">
+  
+    <div id="b16" class="ChatItem-chatResponse" style="display:none; ">
+      <div class="text">
+        <div id="r16">
+        </div>
+      </div>
+    </div>
+</div>
+
+<div id="17" style="display:none;">
+<div class="ChatItem ">
+    <div class="ChatItem-meta">
+      <div class ="ChatItem-avatar ">
+          <img class="ChatItem-avatarImage" src="https://image.ibb.co/eTiXWa/avatarrobot.png">
+      </div>
+  </div> 
+
+ 
+  <div class="ChatItem-chatContent">
+    <div class="ChatItem-chatText">
+      <div class="text">
+       Did you stop having fun doing things that you used to enjoy?<br>
+        <input type="radio" name="q17" value="1" onclick="nextq(this);">
+        <label for="q17" >Never</label><br>
+        <input type="radio" name="q17" value="2" onclick="nextq(this);">
+        <label for="q17">Sometimes</label><br>
+        <input type="radio" name="q17" value="3" onclick="nextq(this);">
+        <label for="q17" >Constantly</label><br> 
+      </div>
+    </div>
+    </div>
+  </div>
+</div>
+
+<div class="ChatItem-chatContent" style="margin-left: 150px; margin-bottom: 30px;">
+  
+    <div id="b17" class="ChatItem-chatResponse" style="display:none; ">
+      <div class="text">
+        <div id="r17">
+        </div>
+      </div>
+    </div>
+</div>
+
+<div id="18" style="display:none;">
+<div class="ChatItem ">
+    <div class="ChatItem-meta">
+      <div class ="ChatItem-avatar ">
+          <img class="ChatItem-avatarImage" src="https://image.ibb.co/eTiXWa/avatarrobot.png">
+      </div>
+  </div> 
+
+ 
+  <div class="ChatItem-chatContent">
+    <div class="ChatItem-chatText">
+      <div class="text">
+      Did you lose or gain weight without trying to, or has your appetite changed?<br>
+        <input type="radio" name="q18" value="1" onclick="nextq(this);">
+        <label for="q18" >Never</label><br>
+        <input type="radio" name="q18" value="2" onclick="nextq(this);">
+        <label for="q18">Sometimes</label><br>
+        <input type="radio" name="q18" value="3" onclick="nextq(this);">
+        <label for="q18" >Constantly</label><br> 
+      </div>
+    </div>
+    </div>
+  </div>
+</div>
+
+<div class="ChatItem-chatContent" style="margin-left: 150px; margin-bottom: 30px;">
+  
+    <div id="b18" class="ChatItem-chatResponse" style="display:none; ">
+      <div class="text">
+        <div id="r18">
+        </div>
+      </div>
+    </div>
+</div>
+
+<div id="19" style="display:none;">
+<div class="ChatItem ">
+    <div class="ChatItem-meta">
+      <div class ="ChatItem-avatar ">
+          <img class="ChatItem-avatarImage" src="https://image.ibb.co/eTiXWa/avatarrobot.png">
+      </div>
+  </div> 
+
+ 
+  <div class="ChatItem-chatContent">
+    <div class="ChatItem-chatText">
+      <div class="text">
+       Do you feel slowed down compared to your usual pace?<br>
+        <input type="radio" name="q19" value="1" onclick="nextq(this);">
+        <label for="q19" >Never</label><br>
+        <input type="radio" name="q19" value="2" onclick="nextq(this);">
+        <label for="q19">Sometimes</label><br>
+        <input type="radio" name="q19" value="3" onclick="nextq(this);">
+        <label for="q19" >Constantly</label><br> 
+      </div>
+    </div>
+    </div>
+  </div>
+</div>
+
+<div class="ChatItem-chatContent" style="margin-left: 150px; margin-bottom: 30px;">
+  
+    <div id="b19" class="ChatItem-chatResponse" style="display:none; ">
+      <div class="text">
+        <div id="r19">
+        </div>
+      </div>
+    </div>
+</div>
+
+<div id="20" style="display:none;">
+<div class="ChatItem ">
+    <div class="ChatItem-meta">
+      <div class ="ChatItem-avatar ">
+          <img class="ChatItem-avatarImage" src="https://image.ibb.co/eTiXWa/avatarrobot.png">
+      </div>
+  </div> 
+
+ 
+  <div class="ChatItem-chatContent">
+    <div class="ChatItem-chatText">
+      <div class="text">
+       Do you keep thinking about death or taking your own life?<br>
+        <input type="radio" name="q20" value="1" onclick="nextq(this);">
+        <label for="q20" >Never</label><br>
+        <input type="radio" name="q20" value="2" onclick="nextq(this);">
+        <label for="q20">Sometimes</label><br>
+        <input type="radio" name="q20" value="3" onclick="nextq(this);">
+        <label for="q20" >Constantly</label><br> 
+      </div>
+    </div>
+    </div>
+  </div>
+</div>
+
+<div class="ChatItem-chatContent" style="margin-left: 150px; margin-bottom: 30px;">
+  
+    <div id="b20" class="ChatItem-chatResponse" style="display:none; ">
+      <div class="text">
+        <div id="r20">
+        </div>
+      </div>
+    </div>
+</div>
+
+<div id="21" style="display:none;">
+  <div class="ChatItem ">
+      <div class="ChatItem-meta">
+        <div class ="ChatItem-avatar ">
+            <img class="ChatItem-avatarImage" src="https://image.ibb.co/eTiXWa/avatarrobot.png">
+        </div>
+    </div> 
+  
+
+<div class="ChatItem-chatContent">
+  <div class="ChatItem-chatText">
+    <div class="text">
+      You became increasingly goal-oriented, taking on more activities than your normally would, and/or became easily distracted<br>
+      <input type="radio" name="q21" value="1" onclick="nextq(this);">
+      <label for="q21" >Never</label><br>
+      <input type="radio" name="q21" value="2" onclick="nextq(this);">
+      <label for="q21">Sometimes</label><br>
+      <input type="radio" name="q21" value="3" onclick="nextq(this);">
+      <label for="q21" >Constantly</label><br> 
+    </div>
+  </div>
+  </div>
+</div>
+</div>
+
+<div class="ChatItem-chatContent" style="margin-left: 150px; margin-bottom: 30px;">
+
+  <div id="b21" class="ChatItem-chatResponse" style="display:none; ">
+    <div class="text">
+      <div id="r21">
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+</div>   
+<a href="/dialog" class="btn btn-success" role="button" style="padding: 10px 120px;font-size: large;">Next</a>
+</div>                  
+</form> 
+
+
+
+
+<div id="piechart" style="width: 900px; height: 500px; margin-top: 1000px;">
+
+<h1>Manav Jain</h1>
+
+</div>
+
+
+
+
+
+</body>
+</html>

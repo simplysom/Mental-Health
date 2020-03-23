@@ -1,0 +1,8 @@
+.manav{
+    max-height: 50px;
+}
+
+
+.navbar>li{
+    display: inline;
+}

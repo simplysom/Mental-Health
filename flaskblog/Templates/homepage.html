@@ -1,0 +1,125 @@
+
+ <head>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='main.css') }}">
+
+    {% if title %}
+        <title>Flask Blog - {{ title }}</title>
+    {% else %}
+        <title>Flask Blog</title>
+    {% endif %}
+
+
+    <nav class="navbar navbar-inverse" style="background-color: black;" >
+        <div class="container-fluid" >
+          <div class="navbar-header">
+            <!-- <div class="logo" > -->
+                <a href="#"><h2>Healthify</h2></a>
+            <!-- </div> -->
+            <!-- <a class="navbar-brand" href="#">WebSiteName</a> -->
+          </div>
+          <ul class="nav navbar-nav" style="display: inline;" >
+            <!-- <li class="active"><a href="#">Home</a></li> -->
+          </ul>
+          <ul class="nav navbar-nav navbar-right" style="display: inline;font-size: large;">
+            <li><a href="/"><span class="glyphicon glyphicon-log-in"></span><h4>Log Out</h4></a></li>
+          </ul>
+        </div>
+      </nav>
+
+
+    </head>
+
+
+
+
+
+<!-- {% extends "layout.html" %} -->
+{% block content %}
+<html>
+    <link rel="stylesheet" href="../static/soumya/css/style.css">
+    <link rel="stylesheet" href="../static/soumya/css/bootstrap.min.css">
+    <body style="background-color: #d6f3ff;">
+        <div class="service_area" style="margin-top: -150px;">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-12">
+                        <div class="section_title text-center  wow fadeInUp" data-wow-duration=".5s" data-wow-delay=".3s">
+                            <!-- <h3>Features</h3> -->
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-4 col-md-4">
+                        <div class="single_service text-center wow fadeInUp" data-wow-duration=".6s" data-wow-delay=".4s">
+                            <div >
+                                    <img style="max-height: 140px;margin-top: 20px;" src="/static/intro/img/circle1.png" alt="">
+                            </div>
+                            <a href="/assessment1"><h3 style="font-weight: bold;">Psychological Screening test</h3></a>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-4">
+                        <div class="single_service text-center wow fadeInUp" data-wow-duration=".7s" data-wow-delay=".5s">
+                            <div >
+                                <img style="max-height: 140px;margin-top: 20px;" src="/static/intro/img/circle2.png" alt="">
+                            </div>
+                            <a href="http://s3.mirror.co.uk/click-the-colour-and-not-the-word/index.html"><h3 style="font-weight: bold;">Spell the Color! not the Word</h3></a>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-4">
+                        <div class="single_service text-center wow fadeInUp " data-wow-duration=".8s" data-wow-delay=".6s">
+                            <div >
+                                    <img  style="max-height:140px;margin-top:20px"  src="/static/intro/img/circle3.png" alt="">
+                            </div>
+                            <a href="/map1"><h3 style="font-weight: bold;">Local Mental Health Centers</h3></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-4 col-md-4">
+                        <div class="single_service text-center wow fadeInUp" data-wow-duration=".7s" data-wow-delay=".5s">
+                            <div >
+                                <img class="rounded-circle" style="max-height: 140px;margin-top: 20px;" src="/static/intro/img/cbt.jpg" alt="">
+                            </div>
+                            <a href="/cbt"><h3 style="font-weight: bold;">CBT</h3></a>
+                        </div>
+                     </div>
+
+                     <div class="col-lg-4 col-md-4">
+                        <div class="single_service text-center wow fadeInUp" data-wow-duration=".7s" data-wow-delay=".5s">
+                            <div >
+                                <img  class="rounded-circle" style="max-height: 140px;margin-top: 20px;" src="/static/intro/img/psych.jpg" alt="">
+                            </div>
+                            <a href="/motivational"><h3 style="font-weight: bold;">Motivate Yourself</h3></a>
+                        </div>
+                     </div>
+
+                     <div class="col-lg-4 col-md-4">
+                        <div class="single_service text-center wow fadeInUp" data-wow-duration=".7s" data-wow-delay=".5s">
+                            <div >
+                                <img class="rounded-circle" style="max-height: 140px;margin-top: 20px;" src="/static/intro/img/telephone.png" alt="">
+                            </div>
+                            <a href=""><h3 style="font-weight: bold;">Talk to Psychiatrist</h3></a>
+                        </div>
+                     </div>
+
+
+
+
+
+
+                </div>
+            </div>
+        </div>
+        
+    </body>
+</html>
+
+{% endblock content %}

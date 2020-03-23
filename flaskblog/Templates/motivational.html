@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Motivation</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <!-- <link rel="stylesheet" href="{{ url_for('static', filename='css/motivation.css') }}"> -->
+
+<style>
+
+h1{
+    margin-left: 370px;
+    margin-top: 60px;
+    margin-bottom: 50px;
+}
+
+img{
+    margin-left: -165px;
+    max-height: 150px;
+}
+
+
+.container{
+    margin-top: 30px;
+}
+
+.jumbotron{
+    background-color:  rgb(215, 235, 245);
+}
+
+p{
+    margin-left: 220px;
+}
+
+
+
+
+
+</style>
+</head>
+<body>
+
+    <nav class="navbar navbar-inverse" style="background-color: black;" >
+        <div class="container-fluid" >
+          <div class="navbar-header">
+            <!-- <div class="logo" > -->
+                <a href="#"><h2>Healthify</h2></a>
+            <!-- </div> -->
+            <!-- <a class="navbar-brand" href="#">WebSiteName</a> -->
+          </div>
+          <ul class="nav navbar-nav" style="display: inline;" >
+           
+          </ul>
+          <ul class="nav navbar-nav navbar-right" style="display: inline;">
+            <li><a href="/"><span class="glyphicon glyphicon-user"></span>Back</a></li>
+         
+          </ul>
+        </div>
+      </nav>
+
+
+
+
+
+
+    <div class="container">
+    <h1 >MOTIVATIONAL VIDEOS</h1>
+    <div class="row">
+        <div class="col-sm-4">
+            <iframe width="300" height="315"
+            src="https://www.youtube.com/embed/EDoD6K-xPro">
+            </iframe>
+        </div>
+        <div class="col-sm-4">
+            <iframe width="300" height="315"
+            src="https://www.youtube.com/embed/pb7_YJp9bVA">
+            </iframe>
+     </div>
+    
+        <div class="col-sm-4">
+            <iframe width="300" height="315"
+            src="https://www.youtube.com/embed/t6Kw3n9CNrc">
+            </iframe>
+        </div>
+      </div>
+     
+    </div>
+
+<div class="container">
+    <h1>MOTIVATIONAL SONGS </h1>
+    <div class="row">
+        <div class="col-sm-4">
+            <p><img src="../static/manav/images.jfif"></p>
+            <audio controls>
+                <source src="/static/img/om-[hindugodsongs.in].mp3" type="audio/ogg">
+            </audio>
+        </div>
+        <div class="col-sm-4">
+            <p><img src="../static/manav/nature-png-images-3.png"></p>
+            <audio controls>
+                <source src="/static/img/2019-04-26_-_Tranquility_-_www.fesliyanstudios.com.mp3" type="audio/ogg">
+            </audio>
+        </div>
+        <div class="col-sm-4">
+            <p><img src="../static/manav/photo-1455577380025-4321f1e1dca7.jfif"></p>
+            <audio controls>
+                <source src="/static/img/2020-02-22_-_Relaxing_Green_Nature_-_David_Fesliyan.mp3" type="audio/mpeg">
+            </audio>
+        </div>
+        </div>
+
+     </div>
+   
+   
+
+
+     </div>
+</div>
+
+
+<div class="jumbotron jumbotron-fluid container ">
+    <div class="container">
+      <h1>Motivational Sayings</h1>
+      <p id="pro">Bootstrap is the most popular HTML, CSS...</p>
+    </div>
+  </div>
+  
+
+
+
+
+
+</body>
+
+<script>
+
+var div = document.getElementById("pro");
+
+ c =['It is not the size of the dog in the fight, but the size of the fight in the dog.',
+        'Nothing lasts forever. Not even your troubles.',
+        'There are only two ways to live your life. One is as though nothing is a miracle. The other is as though everything is a miracle',
+        'Take chances, make mistakes. That is how you grow. Pain nourishes your courage. You have to fail in order to practice being brave.',
+        'Being strong means rejoicing in who you are, complete with imperfections.',
+        'If you don’t go after what you want, you’ll never have it. If you don’t ask, the answer is always no. If you don’t step forward, you’re always in the same place.',
+        'A life spent making mistakes is not only more honorable, but more useful than a life spent doing nothing.',
+        'Nobody can make you feel inferior without your consent.',
+        'Hope never abandons you, you abandon it',
+        'Nothing splendid has ever been achieved except by those who dared believe that something inside of them was superior to circumstance.']
+
+
+
+// function proverb(){
+   
+//     for(i=0;i<=9;i++){
+//         d=pro.innerHTML=c[i];
+//         return d;
+//     }
+       
+
+// }
+// for (i=0;i<=9;i++)
+// {
+//     var m=0
+//     setInterval(random,1000);
+//     function random()
+//     {
+//         for(i=m;i<=9;i++)
+//         {  
+//             p = document
+//             pro.innerhtml=c[i];
+//             return pro.innerHTML
+//         }
+//     }
+//     m=m+1
+// }
+
+function timer(ms) {
+ return new Promise(res => setTimeout(res, ms));
+}
+
+async function load () { // We need to wrap the loop into an async function for this to work
+  for ( i = 0; i <= 9; i++) {
+    pro.innerHTML=c[i]
+
+    await timer(3000); // then the created Promise can be awaited
+  }
+}
+
+load();
+
+
+
+
+
+</script>
+</html>
